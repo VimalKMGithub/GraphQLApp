@@ -26,6 +26,8 @@ configurePassport();
 
 job.start();
 
+const PORT = process.env.PORT || 5000;
+
 const __dirname = path.resolve();
 const app = express();
 
@@ -89,7 +91,7 @@ app.get("*", (req, res) => {
 });
 
 // Modified server startup
-await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
+await new Promise((resolve) => httpServer.listen({ PORT }, resolve));
 await connectDB();
 
-console.log(`🚀 Server ready at http://localhost:4000/graphql`);
+console.log(`🚀 Server ready at ${PORT}`);
