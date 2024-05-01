@@ -1,7 +1,7 @@
 import cron from "cron";
 import https from "https";
 
-const URL = "https://graphqlapp.onrender.com";
+const URL = "https://vgraphql.onrender.com";
 
 const job = new cron.CronJob("*/14 * * * *", function () {
 	https
